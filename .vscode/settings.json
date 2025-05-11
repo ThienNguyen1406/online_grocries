@@ -1,0 +1,19 @@
+{
+    "cmake.sourceDirectory": "C:/thiennguyen/online_grocries/linux",
+    "sqltools.connections": [
+        {
+            "mysqlOptions": {
+                "authProtocol": "default",
+                "enableSsl": "Disabled"
+            },
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 3306,
+            "driver": "MySQL",
+            "name": "groceries",
+            "username": "root",
+            "database": "groceries",
+            "password": "1234"
+        }
+    ]
+}
