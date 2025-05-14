@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
-import 'package:online_grocries/common_widget/my_order_row.dart' show getDeliverType, getOrderStatus, getOrderStatusColor, getPaymentStatus, getPaymentStatusColor, getPaymentType;
+import 'package:online_grocries/common_widget/my_order_row.dart';
 import 'package:online_grocries/common_widget/popup_layout.dart';
-import 'package:online_grocries/view/account/write_review_view.dart' show WriteReviewView;
-import 'package:online_grocries/view_model/addres_view_mode.dart' show AddressViewModel;
+import 'package:online_grocries/view/account/write_review_view.dart';
+import 'package:online_grocries/view_model/addres_view_mode.dart';
+
 
 import '../../common/color_extension.dart';
 import '../../common_widget/order_item_row.dart';
@@ -185,7 +185,7 @@ class _MyOrdersDetailViewState extends State<MyOrdersDetailView> {
                     return OrderItemRow(
                       pObj: pObj,
                       showReviewButton:
-                          widget.mObj.orderStatus == 3 ,
+                          widget.mObj.orderStatus == 3 && pObj.rating == 0.0,
                       onWriteReviewPressed: () {
                         Navigator.push(context, PopupLayout(child:
                             WriteReviewView(didSubmit: (rating, message) {

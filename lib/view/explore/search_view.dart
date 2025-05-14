@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:online_grocries/common_widget/product_cell.dart' show ProductCell;
+import 'package:online_grocries/common_widget/product_cell.dart';
+
 
 import '../../common/color_extension.dart';
 import '../../model/offer_product_model.dart';

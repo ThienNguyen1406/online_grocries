@@ -1,7 +1,6 @@
 import 'package:get/get.dart';
 import 'package:online_grocries/model/product_detail_model.dart';
 
-
 import '../common/globs.dart';
 import '../common/service_call.dart';
 import '../model/explore_category_model.dart';

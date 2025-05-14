@@ -1,7 +1,8 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:online_grocries/common/color_extension.dart';
 import 'package:online_grocries/model/my_order_model.dart';
-
 
 import '../common/color_extension.dart';
 
@@ -176,7 +177,7 @@ String getOrderStatus(MyOrderModel mObj) {
   //1: new, 2: order_accept, 3: order_delivered, 4: cancel, 5: order declined
   switch (mObj.orderStatus) {
     case 1:
-      return "New Order";
+      return "Placed";
     case 2:
       return "Accepted";
     case 3:

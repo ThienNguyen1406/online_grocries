@@ -6,7 +6,6 @@ class Dropdown extends StatelessWidget {
   final String title;
   final String placeholder;
   final List valueList;
-  final String? titleKey;
   final Object? selectValue;
   final Function(Object?) didChange;
   const Dropdown(
@@ -14,7 +13,6 @@ class Dropdown extends StatelessWidget {
       required this.title,
       required this.placeholder,
       required this.valueList,
-      this.titleKey,
       this.selectValue,
       required this.didChange});
 
@@ -53,7 +51,7 @@ class Dropdown extends StatelessWidget {
                   return DropdownMenuItem(
                       value: obj,
                       child: Text(
-                        titleKey != null ? ( obj[titleKey] ).toString() : obj.toString(),
+                        obj.toString(),
                         style: TextStyle(
                             color: TColor.primaryText,
                             fontSize: 16,

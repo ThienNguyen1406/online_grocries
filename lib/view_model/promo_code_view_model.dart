@@ -1,8 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:get/get.dart';
-import 'package:online_grocries/common/globs.dart';
-import 'package:online_grocries/common/service_call.dart';
-
+import '../common/globs.dart' show Globs, KKey, SVKey;
+import '../common/service_call.dart' show ServiceCall;
 import '../model/promo_code_model.dart';
 
 class PromoCodeViewModel extends GetxController {

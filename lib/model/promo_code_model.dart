@@ -42,7 +42,7 @@ class PromoCodeModel {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = {};
+    final Map<String, dynamic> data = <String, dynamic>{};
     data['promo_code_id'] = promoCodeId;
     data['code'] = code;
     data['title'] = title;

@@ -2,9 +2,10 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:online_grocries/common/globs.dart';
-import 'package:online_grocries/common/service_call.dart';
 import 'package:online_grocries/view/login/forgot_password_set_view.dart';
 import 'package:online_grocries/view/login/verification_view.dart';
+
+import '../common/service_call.dart';
 
 
 class ForgotPasswordViewModel extends GetxController {

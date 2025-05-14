@@ -3,7 +3,6 @@ import 'package:get/get.dart';
 import 'package:online_grocries/model/my_order_model.dart';
 import 'package:online_grocries/model/product_detail_model.dart';
 
-
 import '../common/globs.dart';
 import '../common/service_call.dart';
 

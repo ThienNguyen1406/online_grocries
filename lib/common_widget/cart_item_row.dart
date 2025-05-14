@@ -1,7 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:online_grocries/common/color_extension.dart';
-
 
 import '../model/cart_item_model.dart';
 
@@ -10,13 +10,9 @@ class CartItemRow extends StatelessWidget {
   final VoidCallback didDelete;
   final VoidCallback didQtyAdd;
   final VoidCallback didQtySub;
+  
 
-  const CartItemRow(
-      {super.key,
-      required this.cObj,
-      required this.didQtyAdd,
-      required this.didQtySub,
-      required this.didDelete});
+  const CartItemRow({super.key, required this.cObj, required this.didQtyAdd, required this.didQtySub, required this.didDelete});
 
   @override
   Widget build(BuildContext context) {
@@ -32,16 +28,17 @@ class CartItemRow extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                CachedNetworkImage(
+                 CachedNetworkImage(
                   imageUrl: cObj.image ?? "",
                   placeholder: (context, url) => const Center(
                     child: CircularProgressIndicator(),
                   ),
                   errorWidget: (context, url, error) => const Icon(Icons.error),
-                  width: 80,
+                 width: 80,
                   height: 65,
                   fit: BoxFit.contain,
                 ),
+                
                 const SizedBox(
                   width: 15,
                 ),
@@ -75,12 +72,13 @@ class CartItemRow extends StatelessWidget {
                           height: 2,
                         ),
                         Text(
-                          "${cObj.unitValue}${cObj.unitName} Price",
+                         "${cObj.unitValue}${cObj.unitName} Price",
                           style: TextStyle(
                               color: TColor.secondaryText,
                               fontSize: 14,
                               fontWeight: FontWeight.w500),
                         ),
+
                         const SizedBox(
                           height: 10,
                         ),
@@ -111,7 +109,7 @@ class CartItemRow extends StatelessWidget {
                               width: 15,
                             ),
                             Text(
-                              (cObj.qty ?? 0).toString(),
+                              (cObj.qty ?? 0 ).toString(),
                               style: TextStyle(
                                   color: TColor.primaryText,
                                   fontSize: 16,
@@ -143,7 +141,7 @@ class CartItemRow extends StatelessWidget {
                             ),
                             const Spacer(),
                             Text(
-                              "\$${(cObj.totalPrice ?? 0).toStringAsFixed(2)}",
+                              "\$${ (cObj.totalPrice ?? 0).toStringAsFixed(2) }",
                               style: TextStyle(
                                   color: TColor.primaryText,
                                   fontSize: 18,

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:online_grocries/view/login/sign_up_view.dart';
 import 'package:online_grocries/view_model/login_view_model.dart';
-
 import '../../common/color_extension.dart';
 import '../../common_widget/line_textfield.dart';
 import '../../common_widget/round_button.dart';

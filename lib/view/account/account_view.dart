@@ -3,7 +3,6 @@ import 'package:get/get.dart';
 import 'package:online_grocries/view/account/payment_method_view.dart';
 import 'package:online_grocries/view/account/promo_code_view.dart';
 
-
 import '../../common/color_extension.dart';
 import '../../common_widget/account_row.dart';
 import '../../view_model/splash_view_model.dart';
@@ -52,7 +51,7 @@ class _AccountViewState extends State<AccountView> {
                       Row(
                         children: [
                           Text(
-                            "Code For Any",
+                            "Thiện Nguyễn",
                             style: TextStyle(
                                 color: TColor.primaryText,
                                 fontSize: 20,
@@ -69,7 +68,7 @@ class _AccountViewState extends State<AccountView> {
                         ],
                       ),
                       Text(
-                        "codeforany@gmail.com",
+                        "contact with me: nvt1406nvt@gmail.com",
                         style: TextStyle(
                             color: TColor.secondaryText, fontSize: 16),
                       )
@@ -86,15 +85,14 @@ class _AccountViewState extends State<AccountView> {
               title: "My Orders",
               icon: "assets/img/a_order.png",
               onPressed: () {
-                Get.to( () => const MyOrdersView() );
+                Get.to(() => const MyOrdersView());
               },
             ),
             AccountRow(
               title: "My Details",
               icon: "assets/img/a_my_detail.png",
               onPressed: () {
-                Get.to( () => const MyDetailView() );
-                
+                Get.to(() => const MyDetailView());
               },
             ),
             AccountRow(
@@ -111,15 +109,14 @@ class _AccountViewState extends State<AccountView> {
               title: "Payment Methods",
               icon: "assets/img/paymenth_methods.png",
               onPressed: () {
-
-                Get.to(() => const PaymentMethodListView() );
+                Get.to(() => const PaymentMethodListView());
               },
             ),
             AccountRow(
               title: "Promo Code",
               icon: "assets/img/a_promocode.png",
               onPressed: () {
-                 Navigator.push(
+                Navigator.push(
                     context,
                     MaterialPageRoute(
                         builder: (context) => const PromoCodeView()));
@@ -129,8 +126,7 @@ class _AccountViewState extends State<AccountView> {
               title: "Notifications",
               icon: "assets/img/a_noitification.png",
               onPressed: () {
-                Get.to(() => const NotificationListView() );
-                
+                Get.to(() => const NotificationListView());
               },
             ),
             AccountRow(

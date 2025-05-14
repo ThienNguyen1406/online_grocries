@@ -1,6 +1,5 @@
 class MyOrderModel {
   int? orderId;
-  int? userId;
   String? cartId;
   double? totalPrice;
   double? userPayPrice;
@@ -27,7 +26,6 @@ class MyOrderModel {
 
   MyOrderModel(
       {this.orderId,
-      this.userId,
       this.cartId,
       this.totalPrice,
       this.userPayPrice,
@@ -42,9 +40,8 @@ class MyOrderModel {
       this.names,
       this.images});
 
-  MyOrderModel.fromJson(Map<dynamic, dynamic> json) {
+  MyOrderModel.fromJson(Map<String, dynamic> json) {
     orderId = json['order_id'];
-    userId = json['user_id'];
     cartId = json['cart_id'];
     totalPrice = double.tryParse("${json['total_price']}"); 
     userPayPrice = double.tryParse("${json['user_pay_price']}");
@@ -69,7 +66,6 @@ class MyOrderModel {
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = {};
     data['order_id'] = orderId;
-    data['user_id'] = userId;
     data['cart_id'] = cartId;
     data['total_price'] = totalPrice;
     data['user_pay_price'] = userPayPrice;

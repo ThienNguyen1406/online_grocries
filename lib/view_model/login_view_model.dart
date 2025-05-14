@@ -1,9 +1,11 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
 import 'package:online_grocries/common/globs.dart';
-import 'package:online_grocries/common/service_call.dart';
 import 'package:online_grocries/view_model/splash_view_model.dart';
+
+import '../common/service_call.dart';
 
 class LoginViewModel extends GetxController {
   final txtEmail = TextEditingController().obs;
@@ -43,7 +45,7 @@ class LoginViewModel extends GetxController {
       ServiceCall.post({
         "email": txtEmail.value.text,
         "password": txtPassword.value.text,
-        // "dervice_token": ""
+        "dervice_token": ""
       }, SVKey.svLogin, withSuccess: (resObj) async {
         Globs.hideHUD();
 

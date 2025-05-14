@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:online_grocries/common_widget/line_textfield.dart';
 import 'package:online_grocries/common_widget/round_button.dart';
-import 'package:online_grocries/view_model/addres_view_mode.dart' show AddressViewModel;
+import 'package:online_grocries/view_model/addres_view_mode.dart';
 
 
 import '../../common/color_extension.dart';

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:online_grocries/view/home/product_details_view.dart' show ProductDetails;
+import 'package:online_grocries/view/home/product_details_view.dart';
 
 import '../../common/color_extension.dart';
 import '../../common_widget/category_cell.dart';
@@ -133,9 +133,9 @@ class _HomeViewState extends State<HomeView> {
                   () => ListView.builder(
                       scrollDirection: Axis.horizontal,
                       padding: const EdgeInsets.symmetric(horizontal: 15),
-                      itemCount: homeVM.offerArr.length,
+                      itemCount: homeVM.bestSellingArr.length,
                       itemBuilder: (context, index) {
-                        var pObj = homeVM.offerArr[index] ;
+                        var pObj = homeVM.bestSellingArr[index];
 
                         return ProductCell(
                           pObj: pObj,
@@ -147,9 +147,8 @@ class _HomeViewState extends State<HomeView> {
                             homeVM.serviceCallHome();
                           },
                           onCart: () {
-                            CartViewModel.serviceCallAddToCart( pObj.prodId ?? 0  , 1, () {
-
-                             });
+                            CartViewModel.serviceCallAddToCart(
+                                pObj.prodId ?? 0, 1, () {});
                           },
                         );
                       }),
@@ -165,27 +164,28 @@ class _HomeViewState extends State<HomeView> {
                 height: 230,
                 child: Obx(
                   () => ListView.builder(
-                    scrollDirection: Axis.horizontal,
-                    padding: const EdgeInsets.symmetric(horizontal: 15),
-                    itemCount: homeVM.bestSellingArr.length,
-                    itemBuilder: (context, index) {
-                      var pObj = homeVM.bestSellingArr[index];
+                      scrollDirection: Axis.horizontal,
+                      padding: const EdgeInsets.symmetric(horizontal: 15),
+                      itemCount: homeVM.bestSellingArr.length,
+                      itemBuilder: (context, index) {
+                        var pObj = homeVM.bestSellingArr[index];
 
-                      return ProductCell(
-                        pObj: pObj,
-                        onPressed: () async {
-                          await  Get.to(() => ProductDetails(
+                        return ProductCell(
+                          pObj: pObj,
+                          onPressed: () async {
+                            await Get.to(() => ProductDetails(
                                   pObj: pObj,
                                 ));
 
-                          homeVM.serviceCallHome();
-                        },
-                        onCart: () {
-                          CartViewModel.serviceCallAddToCart(
+                            homeVM.serviceCallHome();
+                          },
+                          onCart: () {
+                            CartViewModel.serviceCallAddToCart(
                                 pObj.prodId ?? 0, 1, () {});
-                        },
-                      );
-                    }),),
+                          },
+                        );
+                      }),
+                ),
               ),
               SectionView(
                 title: "Groceries",
@@ -196,18 +196,19 @@ class _HomeViewState extends State<HomeView> {
               SizedBox(
                 height: 100,
                 child: Obx(
-                  () =>  ListView.builder(
-                    scrollDirection: Axis.horizontal,
-                    padding: const EdgeInsets.symmetric(horizontal: 15),
-                    itemCount: homeVM.groceriesArr.length,
-                    itemBuilder: (context, index) {
-                      var pObj = homeVM.groceriesArr[index];
+                  () => ListView.builder(
+                      scrollDirection: Axis.horizontal,
+                      padding: const EdgeInsets.symmetric(horizontal: 15),
+                      itemCount: homeVM.groceriesArr.length,
+                      itemBuilder: (context, index) {
+                        var pObj = homeVM.groceriesArr[index];
 
-                      return CategoryCell(
-                        pObj: pObj,
-                        onPressed: () {},
-                      );
-                    }),),
+                        return CategoryCell(
+                          pObj: pObj,
+                          onPressed: () {},
+                        );
+                      }),
+                ),
               ),
               const SizedBox(
                 height: 15,
@@ -216,27 +217,28 @@ class _HomeViewState extends State<HomeView> {
                 height: 230,
                 child: Obx(
                   () => ListView.builder(
-                    scrollDirection: Axis.horizontal,
-                    padding: const EdgeInsets.symmetric(horizontal: 15),
-                    itemCount: homeVM.listArr.length,
-                    itemBuilder: (context, index) {
-                      var pObj = homeVM.listArr[index] ;
+                      scrollDirection: Axis.horizontal,
+                      padding: const EdgeInsets.symmetric(horizontal: 15),
+                      itemCount: homeVM.listArr.length,
+                      itemBuilder: (context, index) {
+                        var pObj = homeVM.listArr[index];
 
-                      return ProductCell(
-                        pObj: pObj,
-                        onPressed: () async {
+                        return ProductCell(
+                          pObj: pObj,
+                          onPressed: () async {
                             await Get.to(() => ProductDetails(
                                   pObj: pObj,
                                 ));
 
                             homeVM.serviceCallHome();
                           },
-                        onCart: () {
-                          CartViewModel.serviceCallAddToCart(
+                          onCart: () {
+                            CartViewModel.serviceCallAddToCart(
                                 pObj.prodId ?? 0, 1, () {});
-                        },
-                      );
-                    }),),
+                          },
+                        );
+                      }),
+                ),
               ),
               const SizedBox(
                 height: 20,

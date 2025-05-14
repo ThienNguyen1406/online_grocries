@@ -3,7 +3,6 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:online_grocries/view/home/home_view.dart';
 
-
 import '../../common/color_extension.dart';
 import '../../view_model/favourite_view_model.dart';
 import '../account/account_view.dart';

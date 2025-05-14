@@ -1,8 +1,9 @@
 import 'package:fl_country_code_picker/fl_country_code_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:online_grocries/common/color_extension.dart';
 import 'package:online_grocries/view/login/login_view.dart';
-import 'package:online_grocries/view/login/sign_up_view.dart';
+import 'package:online_grocries/view/login/sign_up_view.dart' show SignUpView;
 import 'package:online_grocries/view/login/verification_view.dart';
 
 

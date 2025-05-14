@@ -2,8 +2,9 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:online_grocries/common/globs.dart';
-import 'package:online_grocries/common/service_call.dart';
 import 'package:online_grocries/view_model/splash_view_model.dart';
+
+import '../common/service_call.dart';
 
 
 class SignUpViewModel extends GetxController {

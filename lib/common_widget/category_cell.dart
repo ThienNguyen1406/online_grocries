@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:online_grocries/common/color_extension.dart';
 
 import '../model/type_model.dart';
@@ -7,8 +8,11 @@ import '../model/type_model.dart';
 class CategoryCell extends StatelessWidget {
   final TypeModel pObj;
   final VoidCallback onPressed;
-
-  const CategoryCell({super.key, required this.pObj, required this.onPressed});
+  
+  const CategoryCell(
+      {super.key,
+      required this.pObj,
+      required this.onPressed});
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +23,8 @@ class CategoryCell extends StatelessWidget {
         margin: const EdgeInsets.symmetric(horizontal: 8),
         padding: const EdgeInsets.all(15),
         decoration: BoxDecoration(
-          color: (pObj.color ?? TColor.primary).withOpacity(0.3),
+          color:( pObj.color ?? TColor.primary).withOpacity(0.3) ,
+          
           borderRadius: BorderRadius.circular(15),
         ),
         child: Column(
@@ -29,19 +34,26 @@ class CategoryCell extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
+
+
                 CachedNetworkImage(
                   imageUrl: pObj.image ?? "",
-                  placeholder: (context, url) => const Center(
+                  placeholder: (context, url) =>
+                      const Center(
                     child: CircularProgressIndicator(),
                   ),
                   errorWidget: (context, url, error) => const Icon(Icons.error),
-                  width: 70,
+                 width: 70,
                   height: 70,
                   fit: BoxFit.contain,
                 ),
+
+               
+
                 const SizedBox(
                   height: 15,
                 ),
+
                 Expanded(
                   child: Text(
                     pObj.typeName ?? "",
@@ -53,6 +65,7 @@ class CategoryCell extends StatelessWidget {
                 ),
               ],
             ),
+            
           ],
         ),
       ),

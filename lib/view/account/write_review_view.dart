@@ -4,7 +4,6 @@ import 'package:get/get.dart';
 import 'package:online_grocries/common/color_extension.dart';
 import 'package:online_grocries/common_widget/round_button.dart';
 
-
 class WriteReviewView extends StatefulWidget {
   final Function(double, String) didSubmit;
   const WriteReviewView({super.key, required this.didSubmit});

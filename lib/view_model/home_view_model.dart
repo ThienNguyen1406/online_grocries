@@ -1,15 +1,13 @@
 import 'package:flutter/foundation.dart';
 import 'package:get/get.dart';
-import 'package:online_grocries/common/globs.dart';
-import 'package:online_grocries/common/service_call.dart';
 
-
+import '../common/globs.dart';
+import '../common/service_call.dart';
 import '../model/offer_product_model.dart';
 import '../model/type_model.dart';
 
 class HomeViewModel extends GetxController {
-
-  final RxList<OfferProductModel> offerArr = <OfferProductModel>[].obs; 
+  final RxList<OfferProductModel> offerArr = <OfferProductModel>[].obs;
   final RxList<OfferProductModel> bestSellingArr = <OfferProductModel>[].obs;
   final RxList<TypeModel> groceriesArr = <TypeModel>[].obs;
   final RxList<OfferProductModel> listArr = <OfferProductModel>[].obs;
@@ -26,55 +24,46 @@ class HomeViewModel extends GetxController {
     }
 
     serviceCallHome();
-   
   }
 
   //ServiceCall
   void serviceCallHome() {
-
     Globs.showHUD();
-    ServiceCall.post({
-      
-    }, SVKey.svHome, isToken: true, withSuccess: (resObj) async {
-      Globs.hideHUD();
+    ServiceCall.post(
+      {},
+      SVKey.svHome,
+      isToken: true,
+      withSuccess: (resObj) async {
+        Globs.hideHUD();
 
-      if (resObj[KKey.status] == "1") {
-        var payload = resObj[KKey.payload] as Map? ?? {};
-        
+        if (resObj[KKey.status] == "1") {
+          var payload = resObj[KKey.payload] as Map? ?? {};
 
-        var offerDataArr =   (payload["offer_list"] as List? ?? []).map((oObj) {
-            return OfferProductModel.fromJson(oObj);
-        }).toList();
+          var offerDataArr = (payload["offer_list"] as List? ?? [])
+              .map((oObj) => OfferProductModel.fromJson(oObj))
+              .toList();
+          offerArr.value = offerDataArr;
 
-        offerArr.value = offerDataArr;
+          var bestSellingDataArr = (payload["best_sell_list"] as List? ?? [])
+              .map((oObj) => OfferProductModel.fromJson(oObj))
+              .toList();
+          bestSellingArr.value = bestSellingDataArr;
 
-        var bestSellingDataArr = (payload["best_sell_list"] as List? ?? []).map((oObj) {
-          return OfferProductModel.fromJson(oObj);
-        }).toList();
+          var typeDataArr = (payload["type_list"] as List? ?? [])
+              .map((oObj) => TypeModel.fromJson(oObj))
+              .toList();
+          groceriesArr.value = typeDataArr;
 
-        bestSellingArr.value = bestSellingDataArr;
-
-         var typeDataArr =
-            (payload["type_list"] as List? ?? []).map((oObj) {
-          return TypeModel.fromJson(oObj);
-        }).toList();
-
-        groceriesArr.value = typeDataArr;
-
-         var listDataArr =
-            (payload["list"] as List? ?? []).map((oObj) {
-          return OfferProductModel.fromJson(oObj);
-        }).toList();
-
-        listArr.value = listDataArr;
-       
-      } else {}
-
-      
-    }, failure: (err) async {
-      Globs.hideHUD();
-      Get.snackbar(Globs.appName, err.toString());
-    });
+          var listDataArr = (payload["list"] as List? ?? [])
+              .map((oObj) => OfferProductModel.fromJson(oObj))
+              .toList();
+          listArr.value = listDataArr;
+        }
+      },
+      failure: (err) async {
+        Globs.hideHUD();
+        Get.snackbar(Globs.appName, err.toString());
+      },
+    );
   }
-
 }

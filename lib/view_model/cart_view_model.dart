@@ -1,11 +1,11 @@
 import 'package:flutter/foundation.dart';
 import 'package:get/get.dart';
 import 'package:online_grocries/common/globs.dart';
-import 'package:online_grocries/common/service_call.dart';
 import 'package:online_grocries/model/address_model.dart';
 import 'package:online_grocries/model/payment_model.dart';
 
 
+import '../common/service_call.dart';
 import '../model/cart_item_model.dart';
 import '../model/promo_code_model.dart';
 import '../view/my_cart/order_accpet_view.dart';

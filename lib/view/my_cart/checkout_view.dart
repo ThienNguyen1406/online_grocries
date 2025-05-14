@@ -5,11 +5,12 @@ import 'package:get/get.dart';
 import 'package:online_grocries/common_widget/round_button.dart';
 import 'package:online_grocries/view/account/address_list_view.dart';
 import 'package:online_grocries/view/account/payment_method_view.dart';
-import 'package:online_grocries/view/account/promo_code_view.dart' show PromoCodeView;
 import 'package:online_grocries/view_model/cart_view_model.dart';
+
 
 import '../../common/color_extension.dart';
 import '../../common_widget/checkout_row.dart';
+import '../account/promo_code_view.dart';
 import 'error_view.dart';
 
 class CheckoutView extends StatefulWidget {

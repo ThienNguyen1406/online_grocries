@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:online_grocries/common/color_extension.dart';
-import 'package:online_grocries/common_widget/addres_row.dart';
 import 'package:online_grocries/model/address_model.dart';
 import 'package:online_grocries/view_model/addres_view_mode.dart';
 
+
+import '../../common/color_extension.dart';
+import '../../common_widget/address_row.dart';
 import 'add_address_view.dart';
 
 class AddressListView extends StatefulWidget {

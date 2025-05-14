@@ -1,9 +1,9 @@
 import 'package:flutter/foundation.dart';
 import 'package:get/get.dart';
 import 'package:online_grocries/common/globs.dart';
-import 'package:online_grocries/common/service_call.dart';
 
 
+import '../common/service_call.dart';
 import '../model/explore_category_model.dart';
 
 class ExploreViewModel extends GetxController {

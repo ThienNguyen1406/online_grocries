@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:online_grocries/common_widget/line_textfield.dart';
 import 'package:online_grocries/common_widget/round_button.dart';
 import 'package:online_grocries/view_model/payment_view_model.dart';
+import 'package:online_grocries/view_model/splash_view_model.dart';
 
 import '../../common/color_extension.dart';
 

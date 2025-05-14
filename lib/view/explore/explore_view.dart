@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:online_grocries/view/explore/search_view.dart' show SearchView;
 
-
+import 'package:online_grocries/view/explore/search_view.dart';
 
 import '../../common/color_extension.dart';
 import '../../common_widget/explore_cell.dart';
